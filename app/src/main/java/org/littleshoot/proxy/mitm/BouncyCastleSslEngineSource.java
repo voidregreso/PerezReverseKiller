@@ -278,27 +278,6 @@ public class BouncyCastleSslEngineSource implements SslEngineSource {
         return ks;
     }
 
-    /**
-     * Generates an 1024 bit RSA key pair using SHA1PRNG. Thoughts: 2048 takes
-     * much longer time on older CPUs. And for almost every client, 1024 is
-     * sufficient.
-     * 
-     * Derived from Zed Attack Proxy (ZAP). ZAP is an HTTP/HTTPS proxy for
-     * assessing web application security. Copyright 2011 mawoki@ymail.com
-     * Licensed under the Apache License, Version 2.0
-     * 
-     * @param commonName
-     *            the common name to use in the server certificate
-     * 
-     * @param subjectAlternativeNames
-     *            a List of the subject alternative names to use in the server
-     *            certificate, could be empty, but must not be null
-     * 
-     * @see org.parosproxy.paros.security.SslCertificateServiceImpl.
-     *      createCertForHost(String)
-     * @see org.parosproxy.paros.network.SSLConnector.getTunnelSSLSocketFactory(
-     *      String)
-     */
     public SSLEngine createCertForHost(final String commonName,
             final SubjectAlternativeNameHolder subjectAlternativeNames)
             throws GeneralSecurityException, OperatorCreationException,

@@ -9,6 +9,7 @@
             <enum name="unlessEditing" value="3" />
         </attr>
         <attr name="clearButtonDrawable" format="reference"/>
+
     </declare-styleable>
  </resources>
 

@@ -33,6 +33,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -44,8 +45,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import com.android.dx.J2DMain;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.perez.RealFuncUtil;
+import com.perez.util.RealFuncUtil;
 import com.perez.ap.AudioPlayer;
 import com.perez.arsceditor.ArscActivity;
 import com.perez.elfeditor.ElfActivity;
@@ -63,17 +63,22 @@ import org.jb.dexlib.DexFile;
 import org.jf.baksmali.BakSmaliFunc;
 import org.jf.smali.Main;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URLConnection;
 import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Stack;
 import java.util.UUID;
 import java.util.Vector;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.zip.ZipFile;
 
@@ -846,23 +851,61 @@ public class PerezReverseKillerMain extends AppCompatActivity {
     }
 
     public void Elegir() {
-        AtomicInteger cual = new AtomicInteger();
         RankPrefUtil rpf = new RankPrefUtil(this);
-        String[] criteria = {"By Type", "By Date", "By Size"};
-        String[] rev = {"Reversed ranking"};
-        MaterialAlertDialogBuilder madb = new MaterialAlertDialogBuilder(this);
-        madb.setTitle(getString(R.string.howto_rank));
-        madb.setIcon(getDrawable(R.mipmap.ic_launcher));
-        madb.setPositiveButton(getString(R.string.btn_ok), (dlg, which) -> {
-            dlg.dismiss();
+        final String[] criteria = {"By Type", "By Date", "By Size"};
+        AtomicInteger selectedItem = new AtomicInteger();
+        AtomicBoolean checked = new AtomicBoolean();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Rank by");
+        int cual;
+        switch (rpf.GetWhich()) {
+            case "type":
+                cual = 0;
+                break;
+            case "date":
+            default:
+                cual = 1;
+                break;
+            case "size":
+                cual = 2;
+                break;
+        }
+        builder.setSingleChoiceItems(criteria, cual, (dialog, which) -> {
+            selectedItem.set(which);
         });
-        madb.setSingleChoiceItems(criteria, 0, (dlg, which) -> {
-
+        builder.setPositiveButton("OK", (dialog, which) -> {
+            switch (selectedItem.get()) {
+                case 0:
+                    rpf.SetByType();
+                    break;
+                case 1:
+                    rpf.SetByDate();
+                    break;
+                case 2:
+                    rpf.SetBySize();
+                    break;
+            }
         });
-        madb.setMultiChoiceItems(rev, new boolean[]{false}, (dlg, which, checked) -> {
-
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
+        builder.setNeutralButton("Options", (dialog, which) -> {
+            checked.set(rpf.GetReverse());
+            final CheckBox checkBox = new CheckBox(this);
+            checkBox.setText("Reversed ranking");
+            checkBox.setChecked(checked.get());
+            checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                checked.set(isChecked);
+            });
+            AlertDialog checkBoxDialog = new AlertDialog.Builder(this).setTitle("Options")
+                    .setView(checkBox)
+                    .setPositiveButton("OK", (dialog1, which1) -> {
+                        checked.set(checkBox.isChecked());
+                        rpf.SetReverse(true);
+                        dialog1.dismiss();
+                    }).create();
+            checkBoxDialog.show();
         });
-
+        builder.create().show();
+        mAdapter.notifyDataSetInvalidated();
     }
 
     @Override
@@ -1252,6 +1295,40 @@ public class PerezReverseKillerMain extends AppCompatActivity {
         builder.show();
     }
 
+    public String readAboutContent() {
+        StringBuilder changelog = new StringBuilder();
+        Locale locale = getResources().getConfiguration().locale;
+        String language = locale.getLanguage();
+        String filename;
+        switch (language) {
+            case "en":
+            default:
+                filename = "changelog-en.txt";
+                break;
+            case "es":
+                filename = "changelog-es.txt";
+                break;
+            case "fr":
+                filename = "changelog-fr.txt";
+                break;
+            case "zh":
+                filename = "changelog-zh.txt";
+                break;
+        }
+        try {
+            InputStream inputStream = getAssets().open(filename);
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                changelog.append(line).append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return changelog.toString();
+    }
+
     public void showAbout() {
         Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.android);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -1266,7 +1343,7 @@ public class PerezReverseKillerMain extends AppCompatActivity {
             e.printStackTrace();
         }
         builder.setTitle(title);
-        builder.setMessage(getString(R.string.about_content));
+        builder.setMessage(readAboutContent());
         builder.setNeutralButton(R.string.btn_ok, null);
         builder.setPositiveButton(R.string.system_info, new DialogInterface.OnClickListener() {
             @Override
@@ -1292,20 +1369,16 @@ public class PerezReverseKillerMain extends AppCompatActivity {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle(R.string.delete);
         alert.setMessage(String.format(getString(R.string.is_delete), file.getName()));
-        alert.setPositiveButton(R.string.btn_yes, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                new Thread(() -> {
-                    mHandler.sendEmptyMessage(SHOWPROGRESS);
-                    FileUtil.delete(file);
-                    mFileList.remove(file);
-                    Message msg = new Message();
-                    msg.what = TOAST;
-                    msg.obj = file.getName() + getString(R.string.deleted);
-                    mHandler.sendMessage(msg);
-                    mHandler.sendEmptyMessage(DISMISSPROGRESS);
-                }).start();
-            }
-        });
+        alert.setPositiveButton(R.string.btn_yes, (dialog, whichButton) -> new Thread(() -> {
+            mHandler.sendEmptyMessage(SHOWPROGRESS);
+            FileUtil.delete(file);
+            mFileList.remove(file);
+            Message msg = new Message();
+            msg.what = TOAST;
+            msg.obj = file.getName() + getString(R.string.deleted);
+            mHandler.sendMessage(msg);
+            mHandler.sendEmptyMessage(DISMISSPROGRESS);
+        }).start());
         alert.setNegativeButton(R.string.btn_no, null);
         alert.show();
     }

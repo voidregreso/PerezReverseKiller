@@ -12,8 +12,6 @@ import android.util.Log;
 public class LDNetSocket {
   private static final int PORT = 80;
   private static final int CONN_TIMES = 4;
-  private static final String TIMEOUT = "DNS resolution is normal, connection timeout, TCP establishment failure";
-  private static final String IOERR = "DNS resolution is normal, IO is abnormal, TCP establishment failed";
   private static final String HOSTERR = "DNS resolution failed, host address is unreachable";
   private static LDNetSocket instance=null;
   private LDNetSocketListener listener;
@@ -43,7 +41,7 @@ public class LDNetSocket {
    * connectTCPRTT
    */
   public boolean exec(String host) {
-    if (isCConn && loaded) {
+    if (isCConn) {
     	try{
     		startJNITelnet(host, "80"); 
     		return true;
@@ -185,18 +183,6 @@ public class LDNetSocket {
    * jninative
    */
   public native void startJNITelnet(String host, String port);
-
-  static boolean loaded;
-  static {
-    try {
-      System.loadLibrary("tracepath");
-      loaded = true;
-    } catch (UnsatisfiedLinkError e) {
-      e.printStackTrace();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
   
   public void printSocketInfo(String log){
 	  listener.OnNetSocketUpdated(log);

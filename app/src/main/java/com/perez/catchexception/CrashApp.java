@@ -79,7 +79,7 @@ public class CrashApp extends Application {
             proxy.setTrustAllServers(true);
             proxy.start(randNum);
         }
-        Log.e("~~~", proxy.getPort() + "");
+        Log.d("~~~", proxy.getPort() + "");
 
 
         Object object = SharedPreferenceUtils.get(this.getApplicationContext(), "response_filter");

@@ -1,0 +1,7 @@
+Author: González Pérez
+
+Perez Reverse Killer can perform not only basic file management functions, such as: file creation, copying, modification, deletion, cutting, compression/decompression; but also various advanced functions for Android developers and enthusiasts, such as: Apk editing, Dex editing, Arsc editing, binary Xml editing, Dex2jar, Jar2dex, ZipAlign, Java reverse engineering, ODEX2DEX, etc. 
+
+This version has contained following feature updates:
+1. Fixed the known bugs
+2. Initially supports Android 11+

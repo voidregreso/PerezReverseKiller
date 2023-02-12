@@ -1,7 +1,5 @@
 package org.littleshoot.proxy.mitm;
 
-import android.os.Environment;
-
 import java.io.File;
 
 /**
@@ -32,7 +30,7 @@ public class Authority {
      * authority informations
      */
     public Authority() {
-        keyStoreDir = new File(Environment.getExternalStorageDirectory() + "/har/");
+        keyStoreDir = new File(".");
         alias = "littleproxy-mitm"; // proxy id
         password = "Be Your Own Lantern".toCharArray();
         organization = "LittleProxy-mitm"; // proxy name

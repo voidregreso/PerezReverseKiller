@@ -28,7 +28,7 @@
     <string name="cannot_rename">Unable to rename \"%s\".</string>
     <string name="delete">Delete</string>
     <string name="is_delete">Do you want to delete %s?</string>
-    <string name="deleted">Deleted</string>
+    <string name="deleted"> has been deleted</string>
     <string name="copy">Copy</string>
     <string name="copy_to">Copy to clipboard \n</string>
     <string name="copy_message">The file %s already exists. Do you want to overwrite it?</string>
@@ -128,7 +128,6 @@
     <string name="howto_rank">Rank by</string>
 
     <string name="about">About</string>
-    <string name="about_content">Author: González Pérez \n\nPerez reverse killer can perform basic file management, file decompression, but also with as Android developers and enthusiasts dedicated editor apk, dex, arsc, binary and xml signature apk, dex2jar, jar2dex, zipalign , Reverse java source code, convert optimized DEX to standard DEX and other functions. \n\nThis version is updated: 1. Fixed known bugs \n2, Added AXML decompilation and XML compilation functions</string>
     <string name="replacing">Replacing ...</string>
     <string name="searching">searching...</string>
 

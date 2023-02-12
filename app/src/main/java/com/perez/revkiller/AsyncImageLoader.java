@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.ImageView;
 
-import com.perez.RealFuncUtil;
+import com.perez.util.RealFuncUtil;
 
 import java.lang.ref.SoftReference;
 import java.util.HashMap;

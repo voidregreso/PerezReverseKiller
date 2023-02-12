@@ -13,6 +13,7 @@ import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.PrivateKey;
+import java.security.Provider;
 import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.security.Security;
@@ -60,10 +61,12 @@ public final class CertificateHelper {
 
     private static final Logger log = LoggerFactory.getLogger(CertificateHelper.class);
 
-    public static final String PROVIDER_NAME = BouncyCastleProvider.PROVIDER_NAME;
+    public static final String PROVIDER_NAME;
 
     static {
-        Security.addProvider(new BouncyCastleProvider());
+        Provider pv = new BouncyCastleProvider();
+        Security.addProvider(pv);
+        PROVIDER_NAME = pv.getName();
     }
 
     private static final String KEYGEN_ALGORITHM = "RSA";
@@ -77,7 +80,7 @@ public final class CertificateHelper {
      * performs better than SHA256; see this question for details:
      * http://crypto.stackexchange.com/questions/26336/sha512-faster-than-sha256
      */
-    private static final String SIGNATURE_ALGORITHM = (is32BitJvm() ? "SHA256" : "SHA512") + "WithRSAEncryption";
+    private static final String SIGNATURE_ALGORITHM = (is32BitJvm() ? "SHA128" : "SHA256") + "WithRSAEncryption";
 
     private static final int ROOT_KEYSIZE = 2048;
 

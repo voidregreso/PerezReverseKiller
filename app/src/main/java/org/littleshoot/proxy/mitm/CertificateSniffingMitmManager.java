@@ -1,5 +1,8 @@
 package org.littleshoot.proxy.mitm;
 
+import android.os.Build;
+import android.util.Log;
+
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 
@@ -24,18 +27,16 @@ public class CertificateSniffingMitmManager implements MitmManager {
 
     private BouncyCastleSslEngineSource sslEngineSource;
 
-    public CertificateSniffingMitmManager() throws RootCertificateException {
-        this(new Authority());
-    }
-
-    public CertificateSniffingMitmManager(Authority authority)
-            throws RootCertificateException {
+    public CertificateSniffingMitmManager(Authority authority) {
         try {
             sslEngineSource = new BouncyCastleSslEngineSource(authority, true,
                     true);
         } catch (final Exception e) {
-            throw new RootCertificateException(
-                    "Errors during assembling root CA.", e);
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                Log.d("CSMitmManger",
+                        "Since Android 12 removes many BouncyCastle implementations of previously deprecated " +
+                                "encryption algorithms, including all AES algorithms, the root certificate is not available at this time.");
+            } else Log.e( "CSMitmManger", "Errors during assembling root CA: \n" + e.getMessage());
         }
     }
 
@@ -77,8 +78,8 @@ public class CertificateSniffingMitmManager implements MitmManager {
             throws SSLPeerUnverifiedException {
         Certificate[] peerCerts = sslSession.getPeerCertificates();
         Certificate peerCert = peerCerts[0];
-        if (peerCert instanceof X509Certificate) {
-            return (X509Certificate) peerCert;
+        if (peerCert instanceof java.security.cert.X509Certificate) {
+            return (java.security.cert.X509Certificate) peerCert;
         }
         throw new IllegalStateException(
                 "Required java.security.cert.X509Certificate, found: "

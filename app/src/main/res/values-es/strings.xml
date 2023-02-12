@@ -125,7 +125,6 @@
     <string name="text_preferences">Configuraciones de texto</string>
 
     <string name="about">Acerca de...</string>
-    <string name="about_content">Autor: González Pérez \n\nPerez reverse killer puede realizar una gestión básica de archivos, descompresión de archivos, pero también con desarrolladores y entusiastas de Android como editor dedicado apk, dex, arsc, binary y xml signature apk, dex2jar, jar2dex, zipalign, Reverse java source código, convertir DEX optimizado a DEX estándar y otras funciones. \n\nEsta versión se actualiza: 1. Se corrigieron errores conocidos \n2, se agregaron funciones de compilación AXML y compilación XML</string>
     <string name="replacing">Reemplazando ...</string>
     <string name="searching">buscando...</string>
 

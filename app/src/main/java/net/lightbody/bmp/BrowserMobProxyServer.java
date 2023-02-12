@@ -314,19 +314,6 @@ public class BrowserMobProxyServer implements BrowserMobProxy {
 
 
         if (!mitmDisabled) {
-//            if (mitmManager == null) {
-//                mitmManager = ImpersonatingMitmManager.builder()
-//                        .rootCertificateSource(new KeyStoreFileCertificateSource(
-//                                KEYSTORE_TYPE,
-//                                useEcc ? EC_KEYSTORE_RESOURCE : RSA_KEYSTORE_RESOURCE,
-//                                KEYSTORE_PRIVATE_KEY_ALIAS,
-//                                KEYSTORE_PASSWORD))
-//                        .serverKeyGenerator(useEcc ? new ECKeyGenerator() : new RSAKeyGenerator())
-//                        .trustSource(trustSource)
-//                        .build();
-//            }
-//
-//            bootstrap.withManInTheMiddle(mitmManager);
 
             try {
                 bootstrap.withManInTheMiddle(new CertificateSniffingMitmManager(

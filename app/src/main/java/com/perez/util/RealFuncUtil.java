@@ -1,4 +1,4 @@
-package com.perez;
+package com.perez.util;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;

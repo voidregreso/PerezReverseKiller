@@ -124,7 +124,6 @@
     <string name="text_preferences">文字设定</string>
 
     <string name="about">关于</string>
-    <string name="about_content">作者：González Pérez\n\nPerez逆向杀手可以执行基本的文件管理，文件解压缩，还可以作为Android开发人员和发烧友使用专用的apk，dex，arsc，二进制和xml签名apk，dex2jar，jar2dex，zipalign，Reverse Java源代码代码，将优化的DEX转换为标准DEX和其他功能。 \n\n此版本已更新：1.修复了已知的错误\n2，添加了AXML反编译和XML编译功能</string>
     <string name="replacing">更换...</string>
     <string name="searching">正在搜寻...</string>
     <string name="delexif">删除图像中敏感EXIF信息</string>
