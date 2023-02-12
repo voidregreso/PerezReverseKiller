@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/androidsdk/PerezReverseKiller/app/src/main/res/layout/activity_change_filter.xml" value="0.1296875" />
+        <entry key="..\:/androidsdk/PerezReverseKiller/app/src/main/res/layout/activity_httpcapmain.xml" value="0.1296875" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17_PREVIEW" project-jdk-name="17" project-jdk-type="JavaSDK" />
+</project>

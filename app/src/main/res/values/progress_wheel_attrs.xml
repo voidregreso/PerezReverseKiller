@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ProgressWheel">
+        <attr name="text_progress" format="string" />
+        <attr name="textColor_progress" format="color" />
+        <attr name="textSize_progress" format="dimension" />
+        <attr name="barColor_progress" format="color" />
+        <attr name="rimColor_progress" format="color" />
+        <attr name="spinRimColor_progress" format="color" />
+        <attr name="rimWidth_progress" format="dimension" />
+        <attr name="spinSpeed_progress" format="integer" />
+        <attr name="delayMillis_progress" format="integer" />
+        <attr name="circleColor_progress" format="color" />
+        <attr name="spinCircleColor_progress" format="color" />
+        <attr name="radius_progress" format="dimension" />
+        <attr name="barWidth_progress" format="dimension" />
+        <attr name="barLength_progress" format="dimension" />
+        <attr name="barDegree_progress" format="integer" />
+    </declare-styleable>
+</resources>

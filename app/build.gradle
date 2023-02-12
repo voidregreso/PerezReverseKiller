@@ -1,0 +1,145 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 31
+    dataBinding {
+        enabled = true
+    }
+
+    defaultConfig {
+        applicationId "com.perez.revkiller"
+        minSdkVersion 19
+        targetSdkVersion 31
+        multiDexEnabled true
+        ndk {
+            moduleName "function"
+            abiFilters "armeabi-v7a","arm64-v8a"
+        }
+        externalNativeBuild {
+            ndkBuild {
+                arguments "--jobs=8"
+                abiFilters "armeabi-v7a","arm64-v8a"
+            }
+        }
+    }
+
+    ndkVersion "24.0.8215888"
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path file('src/main/jni/Android.mk')
+        }
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+    dexOptions {
+        javaMaxHeapSize "8g"
+        maxProcessCount 8
+        preDexLibraries = false
+        if (additionalParameters == null) {
+            additionalParameters = []
+        }
+        additionalParameters += '--set-max-idx-number=57800'
+    }
+
+    useLibrary 'org.apache.http.legacy'
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/BCKEY.DSA'
+        exclude 'META-INF/BCKEY.SF'
+        exclude 'META-INF/LICENSE.uas.txt'
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'OSGI-INF/*'
+        exclude 'OSGI-INF/*/*'
+        exclude 'lib/*-gpp/jni/*'
+        exclude 'lib/*.jar'
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('carlos.jks')
+            storePassword 'carlos'
+            keyAlias = 'carlos'
+            keyPassword 'carlos'
+        }
+    }
+
+    buildTypes {
+        debug {
+            initWith debug
+            proguardFiles 'proguard.cfg'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles 'proguard.cfg'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'org.jsoup:jsoup:1.12.1'
+    implementation 'org.slf4j:slf4j-api:1.7.10'
+    implementation 'commons-io:commons-io:2.7'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.github.bmelnychuk:atv:1.2.9'
+    implementation 'com.fifesoft:rsyntaxtextarea:2.5.8'
+    implementation 'uk.com.robust-it:cloning:1.9.2'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.github.karthyks:crashlytics:2.0.0-beta2'
+    implementation 'org.smali:baksmali:2.2.2'
+    implementation 'org.smali:smali:2.2.2'
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.guava:guava:28.2-jre'
+    implementation 'io.reactivex:rxandroid:1.1.0'
+    implementation 'io.reactivex:rxjava:1.1.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'com.google.android.material:material:1.5.0'
+
+    implementation 'androidx.databinding:databinding-runtime:1.0.0'
+    implementation 'androidx.databinding:databinding-adapters:1.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.4.1'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation group: 'org.apache.directory.studio', name: 'org.apache.commons.io', version: '2.4'
+    implementation 'javax.annotation:jsr250-api:1.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.7.6'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.7.6'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.7.6'
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.54'
+    implementation 'org.bouncycastle:bcpkix-jdk15on:1.54'
+    implementation 'dnsjava:dnsjava:2.1.7'
+    implementation 'com.google.guava:guava:27.0.1-android'
+    implementation 'com.google.code.findbugs:jsr305:3.0.1'
+    implementation 'com.google.jimfs:jimfs:1.1'
+    implementation 'com.jcraft:jzlib:1.1.3'
+
+    implementation 'org.slf4j:slf4j-log4j12:1.7.21'
+
+    implementation 'net.gotev:uploadservice:3.3'
+
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.github.clans:fab:1.6.4'
+    implementation 'com.google.code.gson:gson:2.7'
+    implementation 'org.littleshoot:littleproxy:1.1.2'
+}
+
+repositories {
+    mavenCentral()
+}

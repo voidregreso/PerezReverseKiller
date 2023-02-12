@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_home"
+        android:orderInCategory="1"
+        android:title="Site navigation"
+        android:icon="@drawable/ic_home_white_24dp"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/search"
+        android:title="Search"
+        android:visible="false"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item
+        android:id="@+id/action_filter"
+        android:orderInCategory="90"
+        android:visible="false"
+        android:icon="@drawable/ic_filter_list_white_24dp"
+        android:title="Paging selection"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_guide"
+        android:orderInCategory="100"
+        android:title="Help" />
+    <item
+        android:id="@+id/action_exit"
+        android:orderInCategory="101"
+        android:title="@string/action_exit"
+        app:showAsAction="never" />
+</menu>

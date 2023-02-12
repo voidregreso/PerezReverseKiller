@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.perez.revkiller"
+    android:versionCode="168"
+    android:versionName="Build 168">
+
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <application
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:name="com.perez.catchexception.CrashApp"
+        android:icon="@drawable/android"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme"
+        android:debuggable="true"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.perez.revkiller.PerezReverseKillerMain"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.perez.revkiller.ZipManagerMain"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/zip_editor" />
+        <activity
+            android:name="com.perez.vp.VideoPlayerActivity"
+            android:label="@string/videoplayer_label" />
+        <activity
+            android:name="com.perez.revkiller.TextEditor"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/text_editor" />
+        <activity
+            android:name="com.perez.revkiller.ClassListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/class_editor" />
+        <activity
+            android:name="com.perez.revkiller.ClassItemActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/class_item" />
+        <activity android:name="com.perez.palette.SketchActivity"
+            android:configChanges="orientation|keyboardHidden"
+            />
+        <activity
+            android:name="com.perez.revkiller.SearchClassesActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/search_class" />
+        <activity
+            android:name="com.perez.revkiller.SearchMethodsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/search_method" />
+        <activity
+            android:name="com.perez.revkiller.FieldListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/field_list" />
+        <activity
+            android:name="com.perez.revkiller.FieldItemEditorActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/field_item_editor" />
+        <activity
+            android:name="com.perez.revkiller.FieldItemNewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/field_item_new" />
+        <activity
+            android:name="com.perez.revkiller.MethodListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/method_list" />
+        <activity
+            android:name="com.perez.revkiller.CodeEditorActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/code_editor" />
+        <activity
+            android:name="com.perez.revkiller.MethodItemEditorActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/method_item_editor" />
+        <activity
+            android:name="com.perez.revkiller.MethodItemNewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/method_item_new" />
+        <activity
+            android:name="com.perez.revkiller.ClassInfoEditorActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/class_info_editor" />
+        <activity
+            android:name="com.perez.revkiller.TextPreferences"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/text_preferences" />
+        <activity
+            android:name="com.perez.imageviewer.HugeImageViewerActivity" />
+        <activity
+            android:name="com.perez.ap.AudioPlayer"
+            android:label="@string/audioplayer_label" />
+		<activity
+            android:windowSoftInputMode="adjustPan"
+            android:name="com.perez.elfeditor.ElfActivity"
+            android:label="ELF Editor" />
+		<activity
+            android:windowSoftInputMode="adjustPan"
+            android:name="com.perez.arsceditor.ArscActivity"
+            android:label="Arsc Editor" />
+        <activity
+            android:name="com.perez.qrcode.CaptureActivity"
+            android:label="QRCode scan"
+            android:screenOrientation="fullSensor" />
+
+        <activity android:name="com.perez.revkiller.PackageActivity" />
+        <activity android:name="com.perez.jadx.ShowCodeActivity" />
+        <activity android:name="com.perez.jadx.ShowDexActivity" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <activity
+            android:name="es.perez.netdiagnosis.Activity.NDGAct"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="webview"
+                    android:scheme="jdhttpmonitor" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="es.perez.netdiagnosis.MyVpnService"
+            android:exported="true"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="es.perez.netdiagnosis.Activity.SettingsActivity"
+            android:label="@string/title_activity_settings" />
+
+        <receiver
+            android:name="es.perez.netdiagnosis.Receiver.MyAdminReceiver"
+            android:description="@string/app_name"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/admin" />
+
+            <intent-filter>
+                <action android:name="android.app.action.PROFILE_PROVISIONING_COMPLETE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="es.perez.netdiagnosis.Activity.HarDetailActivity" />
+        <activity
+            android:name="es.perez.netdiagnosis.Activity.JsonPreviewActivity" />
+
+    </application>
+
+</manifest>

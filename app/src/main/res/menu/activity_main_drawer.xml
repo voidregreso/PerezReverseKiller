@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_webview"
+            android:title="Browser" />
+
+        <item
+            android:id="@+id/nav_preview"
+            android:icon="@drawable/ic_dns_black_24dp"
+            android:title="View request package" />
+
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Network tools" />
+
+        <item
+            android:id="@+id/nav_manage"
+            android:checkable="false"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Settings" />
+
+        <item
+            android:checkable="true"
+            android:title="Advanced functions:">
+            <menu>
+                <item
+                    android:id="@+id/nav_modify"
+                    android:icon="@drawable/ic_mode_edit_black_24dp"
+                    android:title="Return packet injection" />
+                <item
+                    android:id="@+id/nav_ua"
+                    android:icon="@drawable/ic_style_black_24dp"
+                    android:title="Environment switch" />
+                <item
+                    android:id="@+id/nav_cosole"
+                    android:icon="@drawable/ic_assignment_black_24dp"
+                    android:title="View Console.log" />
+                <item
+                    android:id="@+id/nav_host"
+                    android:icon="@drawable/ic_dns_black_24dp"
+                    android:title="HOST Configuration" />
+                <item
+                    android:id="@+id/nav_page"
+                    android:icon="@drawable/ic_note_add_black_24dp"
+                    android:title="Manual paging" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

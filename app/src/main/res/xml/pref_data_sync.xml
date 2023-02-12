@@ -1,0 +1,54 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+         dismiss it. -->
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+    <ListPreference
+        android:defaultValue="0"
+        android:entries="@array/pref_item_UA"
+        android:entryValues="@array/pref_item_UA_values"
+        android:key="select_ua"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_UA" />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="enable_filter"
+        android:title="Enable return packet injection"
+        android:summary="WIP: Enabling this feature will cause an unstable HTTPS request return. Modifying this option will take effect after restarting the application."/>
+
+
+    <EditTextPreference
+        android:key="system_host"
+        android:title="Set HOST"
+        android:summary="Configuring hosts, Separated by spaces, one per line, for example:\n127.0.0.1 www.darkal.cn\n127.0.0.1 darkal.cn">
+        <!--<intent android:action="android.settings.ACTION_WIFI_SETTINGS" />-->
+    </EditTextPreference>
+
+
+    <!-- This preference simply launches an intent when selected. Use this UI sparingly, per
+         design guidelines. -->
+    <Preference
+        android:key="install_cert"
+        android:title="@string/pref_title_cert"
+        android:summary="@string/pref_description_cert">
+        <!--<intent android:action="android.settings.SYNC_SETTINGS" />-->
+    </Preference>
+
+    <Preference
+        android:key="system_proxy"
+        android:title="Set up system proxy"
+
+        android:summary="By setting the system proxy, you can grab other APP request packets, please set the WIFI proxy server to 127.0.0.1:8888">
+        <!--<intent android:action="android.settings.ACTION_WIFI_SETTINGS" />-->
+    </Preference>
+
+    <PreferenceCategory
+        android:title="Application information"/>
+
+    <Preference
+        android:key="app_host"
+        android:title="HOST in effect"/>
+
+</PreferenceScreen>
