@@ -24,14 +24,14 @@ JNIEXPORT jboolean JNICALL Java_com_perez_revkiller_Features_isZipAligned
 JNIEXPORT jboolean JNICALL Java_com_perez_revkiller_Features_isValidElf
 (JNIEnv *, jclass, jstring);
 
-JNIEXPORT jstring JNICALL Java_com_perez_revkiller_Features_compressStrToInt
-(JNIEnv *, jclass, jstring);
-
 JNIEXPORT jlong JNICALL Java_com_perez_revkiller_Features_ELFHash
 (JNIEnv *, jclass, jstring);
 
 JNIEXPORT jint JNICALL Java_com_perez_revkiller_Features_dumpDex
 (JNIEnv *, jclass, jint, jstring);
+
+JNIEXPORT jint JNICALL Java_com_perez_revkiller_Features_openFd
+(JNIEnv *, jclass, jstring);
 
 #ifdef __cplusplus
 }

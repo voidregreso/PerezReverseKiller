@@ -25,7 +25,7 @@ ASTYLE_FILES = $(wildcard $(LOCAL_PATH)/astyle/*.cpp)
 
 ZIPA_FILES = $(wildcard $(LOCAL_PATH)/zipalign/*.cpp) $(wildcard $(LOCAL_PATH)/zipalign/android/native/src/utils/*.cpp)
 
-LOCAL_SRC_FILES := tracepath.c miniTelnet.c Provider.c ELFHash.cpp mainfunction.cpp zlibmgr.cpp rarext.cpp oat2dex.cpp parse_elf.cpp \
+LOCAL_SRC_FILES := tracepath.c miniTelnet.c Provider.c ELFHash.cpp mainfunction.cpp rarext.cpp oat2dex.cpp parse_elf.cpp \
 		odex2dex.cpp zipa.cpp dumpdex_main.cpp $(QRCODE_FILES) $(DUMPDEX_FILES) $(RAR_FILES) $(ZIPA_FILES) $(ASTYLE_FILES)
 
 LOCAL_LDLIBS := -llog -lz

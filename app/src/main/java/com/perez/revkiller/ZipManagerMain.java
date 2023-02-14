@@ -55,13 +55,13 @@ import java.io.ByteArrayInputStream;
 
 import org.jb.dexlib.*;
 
-import com.perez.ap.AudioPlayer;
+import com.perez.medias.AudioPlayer;
 import com.perez.arsceditor.ArscActivity;
 import com.perez.elfeditor.ElfActivity;
 import com.perez.imageviewer.HugeImageViewerActivity;
 import com.perez.res.*;
 import com.perez.util.*;
-import com.perez.vp.VideoPlayerActivity;
+import com.perez.medias.VideoPlayerActivity;
 
 public class ZipManagerMain extends AppCompatActivity {
 

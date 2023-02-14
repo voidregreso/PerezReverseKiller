@@ -13,12 +13,12 @@ public class Features {
 
     public static native boolean isValidElf(String elf);
 
-    public static native String compressStrToInt(String str);
-
     public static native long ELFHash(String strUri);
 
     public static native int dumpDex(int apiLevel, String appEntry);
 
     public native static String AStyleMain(String text, String opt);
+
+    public native static int openFd(String path);
 
 }

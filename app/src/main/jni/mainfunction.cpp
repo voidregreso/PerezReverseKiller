@@ -1,12 +1,18 @@
-#include <cstdio>
-#include <cstdlib>
+#include <sys/syscall.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <cstdint>
 #include "com_perez_revkiller_Features.h"
-#include <fstream>
-#include <string>
 #include <android/log.h>
 
-using namespace std;
+intptr_t openFd(intptr_t fd, const char *path, intptr_t flag) {
+    return (intptr_t) syscall(__NR_openat, fd, path, flag);
+}
 
-void mydebug(const char *msg) {
-    __android_log_print(ANDROID_LOG_INFO, "Perez jni Main Function", "%s", msg);
+JNIEXPORT jint JNICALL Java_com_perez_revkiller_Features_openFd
+        (JNIEnv *env, jclass cls, jstring path) {
+    const char* p = env->GetStringUTFChars(path, 0);
+    intptr_t fd = openFd(AT_FDCWD, p, O_RDONLY);
+    __android_log_print(ANDROID_LOG_INFO, "openFd", "path=%s, fd=%p", p, fd);
+    return fd;
 }

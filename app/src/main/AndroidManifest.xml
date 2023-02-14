@@ -49,7 +49,7 @@
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/zip_editor" />
         <activity
-            android:name="com.perez.vp.VideoPlayerActivity"
+            android:name="com.perez.medias.VideoPlayerActivity"
             android:label="@string/videoplayer_label" />
         <activity
             android:name="com.perez.revkiller.TextEditor"
@@ -113,7 +113,7 @@
         <activity
             android:name="com.perez.imageviewer.HugeImageViewerActivity" />
         <activity
-            android:name="com.perez.ap.AudioPlayer"
+            android:name="com.perez.medias.AudioPlayer"
             android:label="@string/audioplayer_label" />
 		<activity
             android:windowSoftInputMode="adjustPan"

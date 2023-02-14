@@ -33,7 +33,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -46,7 +45,7 @@ import androidx.core.content.FileProvider;
 
 import com.android.dx.J2DMain;
 import com.perez.util.RealFuncUtil;
-import com.perez.ap.AudioPlayer;
+import com.perez.medias.AudioPlayer;
 import com.perez.arsceditor.ArscActivity;
 import com.perez.elfeditor.ElfActivity;
 import com.perez.imageviewer.HugeImageViewerActivity;
@@ -55,7 +54,7 @@ import com.perez.qrcode.CaptureActivity;
 import com.perez.revkiller.exifremover.Interfaz;
 import com.perez.util.FileUtil;
 import com.perez.util.ZipExtract;
-import com.perez.vp.VideoPlayerActivity;
+import com.perez.medias.VideoPlayerActivity;
 import com.perez.xml2axml.func.FuncMain;
 
 import org.glavo.javah.JavahTask;
@@ -359,17 +358,6 @@ public class PerezReverseKillerMain extends AppCompatActivity {
             ActivityCompat.requestPermissions(PerezReverseKillerMain.this, pmList2, RQ_PERMISSION);
         } else {
             CreateInit();
-        }
-    }
-
-    public static String getPkgSign(Context ctx) {
-        try {
-            PackageManager pm = ctx.getPackageManager();
-            PackageInfo pi = pm.getPackageInfo(ctx.getPackageName(), PackageManager.GET_SIGNATURES);
-            return new String(pi.signatures[0].toChars());
-        } catch(Exception e) {
-            e.printStackTrace();
-            return "NULL";
         }
     }
 
@@ -1271,23 +1259,21 @@ public class PerezReverseKillerMain extends AppCompatActivity {
     @SuppressLint("MissingPermission")
     public void SystemInfo() {
         StringBuilder info = new StringBuilder();
-        String pei = MiscellaneousFunctions.createUUID(this);
+        //String pei = MiscellaneousFunctions.createUUID(this);
         String androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-        String dui = new UUID(androidId.hashCode(),
-                ((long) (pei.hashCode() << 64) ^ Math.abs((long)pei.hashCode())) & (long)MiscellaneousFunctions.getDeviceId(this).hashCode()).toString();
-        dui = dui.replaceAll("-", "");
-        info.append("Phone model：" + Build.MODEL + "\n");
-        info.append("Manufacturer：" + Build.MANUFACTURER + "\n");
-        info.append("Android version：" + Build.VERSION.RELEASE + "\n");
-        info.append("Android SDK code：" + Build.VERSION.SDK_INT + "\n");
-        info.append("CPU variant：" + Build.CPU_ABI + " / " + Build.CPU_ABI2 + "\n");
-        info.append("Hardware serial code：" + Build.SERIAL + "\n");
-        info.append("Hardware name：" + Build.HARDWARE + "\n");
-        info.append("Baseband version：" + Build.getRadioVersion() + "\n");
-        info.append("BootLoader version：" + Build.BOOTLOADER + "\n");
-        info.append("Device ID：" + MiscellaneousFunctions.getDeviceId(this) + "\n");
-        info.append("Machine code：" + dui.hashCode() + "\n");
-        info.append("App signature：" + Features.compressStrToInt(getPkgSign(this)));
+        long deviceId = MiscellaneousFunctions.getDeviceId(this).hashCode();
+        info.append("Phone model: " + Build.MODEL + "\n");
+        info.append("Manufacturer: " + Build.MANUFACTURER + "\n");
+        info.append("Android version: " + Build.VERSION.RELEASE + "\n");
+        info.append("Android SDK code: " + Build.VERSION.SDK_INT + "\n");
+        info.append("CPU variant: " + Build.CPU_ABI + " / " + Build.CPU_ABI2 + "\n");
+        info.append("Hardware serial code: " + Build.SERIAL + "\n");
+        info.append("Hardware name: " + Build.HARDWARE + "\n");
+        info.append("Baseband version: " + Build.getRadioVersion() + "\n");
+        info.append("BootLoader version: " + Build.BOOTLOADER + "\n");
+        info.append("System ID: " + androidId + "\n");
+        info.append("Device ID: " + deviceId + "\n");
+        info.append("App signature: " + RealFuncUtil.getSvcSig(this));
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(getString(R.string.system_info));
         builder.setMessage(info.toString());
