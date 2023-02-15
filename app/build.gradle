@@ -1,4 +1,6 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
     compileSdkVersion 31
@@ -12,13 +14,13 @@ android {
         targetSdkVersion 31
         multiDexEnabled true
         ndk {
-            moduleName "function"
-            abiFilters "armeabi-v7a","arm64-v8a"
+            //moduleName "function"
+            abiFilters "armeabi-v7a", "x86", "arm64-v8a"
         }
         externalNativeBuild {
-            ndkBuild {
-                arguments "--jobs=8"
-                abiFilters "armeabi-v7a","arm64-v8a"
+            cmake {
+                cppFlags ""
+                abiFilters "armeabi-v7a", "x86", "arm64-v8a"
             }
         }
     }
@@ -31,8 +33,8 @@ android {
     }
 
     externalNativeBuild {
-        ndkBuild {
-            path file('src/main/jni/Android.mk')
+        cmake {
+            path "CMakeLists.txt"
         }
     }
 
