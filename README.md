@@ -1,5 +1,5 @@
 # PerezReverseKiller
-A useful tool in android reverse engineering, also integrated many useful utilities.
+This utility is specifically designed for reverse engineering Android applications and includes a range of useful features and tools.
 
 ## Screenshots
 ![image](captura/s1.jpg)
