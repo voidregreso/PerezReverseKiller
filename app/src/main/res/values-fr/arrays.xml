@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="translate">
+        <item>Traduction</item>
+    </string-array>
+    <string-array name="translate_provider">
+        <item>Traduction Baidu</item>
+        <item>Traduction Bing</item>
+    </string-array>
+    <string-array name="language">
+        <item>Reconnaissance automatique</item>
+        <item>Chinois</item>
+        <item>Anglais</item>
+        <item>Japonais</item>
+        <item>Coréen</item>
+        <item>Français</item>
+        <item>Thaïlandais</item>
+        <item>Russe</item>
+        <item>Allemand</item>
+        <item>Grec</item>
+        <item>Italien</item>
+        <item>Espagnol</item>
+        <item>Portugais</item>
+        <item>Arabe</item>
+    </string-array>
+
+    <string-array name="rank_criteria">
+        <item>Par Nom</item>
+        <item>Par Type</item>
+        <item>Par Date</item>
+        <item>Par Taille</item>
+    </string-array>
+
+    <string-array name="dialog_menu">
+        <item>Ouvert par défaut</item>
+        <item>Modifier en tant que texte</item>
+        <item>Supprimer</item>
+        <item>Renommer</item>
+        <item>Copier</item>
+        <item>Couper</item>
+        <item>Permission</item>
+    </string-array>
+
+    <string-array name="search_mod">
+        <item>Rechercher des chaînes dans le code</item>
+        <item>Rechercher des fonctions dans le code</item>
+        <item>Rechercher des constantes dans le code</item>
+    </string-array>
+
+    <string-array name="entries_font_size_prefs">
+        <item>8 pt</item>
+        <item>10 pt</item>
+        <item>12 pt</item>
+        <item>14 pt</item>
+        <item>16 pt</item>
+        <item>18 pt</item>
+        <item>20 pt</item>
+    </string-array>
+
+    <string-array name="values_font_size_prefs">
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+    </string-array>
+
+    <string-array name="entries_font_type_prefs">
+        <item>Monospace</item>
+        <item>Sérif</item>
+        <item>Sans Sérif</item>
+    </string-array>
+</resources>

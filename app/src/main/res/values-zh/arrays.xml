@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="translate">
+        <item>翻译</item>
+    </string-array>
+    <string-array name="translate_provider">
+        <item>百度翻译</item>
+        <item>必应翻译</item>
+    </string-array>
+    <string-array name="language">
+        <item>自动识别</item>
+        <item>中文</item>
+        <item>英文</item>
+        <item>日文</item>
+        <item>韩文</item>
+        <item>法文</item>
+        <item>泰文</item>
+        <item>俄文</item>
+        <item>德文</item>
+        <item>希腊文</item>
+        <item>意大利文</item>
+        <item>西班牙文</item>
+        <item>葡萄牙文</item>
+        <item>阿拉伯文</item>
+    </string-array>
+
+    <string-array name="rank_criteria">
+        <item>按名称排序</item>
+        <item>按类型排序</item>
+        <item>按日期排序</item>
+        <item>按大小排序</item>
+    </string-array>
+
+    <string-array name="dialog_menu">
+        <item>默认打开</item>
+        <item>以文本编辑</item>
+        <item>删除</item>
+        <item>重命名</item>
+        <item>复制</item>
+        <item>剪切</item>
+        <item>权限</item>
+    </string-array>
+
+    <string-array name="search_mod">
+        <item>在代码中搜索字符串</item>
+        <item>在代码中搜索函数</item>
+        <item>在代码中搜索常量</item>
+    </string-array>
+
+    <string-array name="entries_font_size_prefs">
+        <item>8 pt</item>
+        <item>10 pt</item>
+        <item>12 pt</item>
+        <item>14 pt</item>
+        <item>16 pt</item>
+        <item>18 pt</item>
+        <item>20 pt</item>
+    </string-array>
+
+    <string-array name="values_font_size_prefs">
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+    </string-array>
+
+    <string-array name="entries_font_type_prefs">
+        <item>等宽字体</item>
+        <item>衬线字体</item>
+        <item>无衬线字体</item>
+    </string-array>
+</resources>

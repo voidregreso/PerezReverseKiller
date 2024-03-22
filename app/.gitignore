@@ -1,0 +1,6 @@
+/build
+.cxx
+
+# Keystore files
+*.jks
+*.keystore

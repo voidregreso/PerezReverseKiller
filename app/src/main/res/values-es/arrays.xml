@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="translate">
+        <item>Traducción</item>
+    </string-array>
+    <string-array name="translate_provider">
+        <item>Traducción Baidu</item>
+        <item>Traducción Bing</item>
+    </string-array>
+    <string-array name="language">
+        <item>Reconocimiento automático</item>
+        <item>Chino</item>
+        <item>Inglés</item>
+        <item>Japonés</item>
+        <item>Coreano</item>
+        <item>Francés</item>
+        <item>Tailandés</item>
+        <item>Ruso</item>
+        <item>Alemán</item>
+        <item>Griego</item>
+        <item>Italiano</item>
+        <item>Español</item>
+        <item>Portugués</item>
+        <item>Árabe</item>
+    </string-array>
+
+    <string-array name="rank_criteria">
+        <item>Por Nombre</item>
+        <item>Por Tipo</item>
+        <item>Por Fecha</item>
+        <item>Por Tamaño</item>
+    </string-array>
+
+    <string-array name="dialog_menu">
+        <item>Abrir por defecto</item>
+        <item>Editar como texto</item>
+        <item>Eliminar</item>
+        <item>Renombrar</item>
+        <item>Copiar</item>
+        <item>Cortar</item>
+        <item>Permiso</item>
+    </string-array>
+
+    <string-array name="search_mod">
+        <item>Buscar cadenas en código</item>
+        <item>Buscar funciones en código</item>
+        <item>Buscar constantes en código</item>
+    </string-array>
+
+    <string-array name="entries_font_size_prefs">
+        <item>8 pt</item>
+        <item>10 pt</item>
+        <item>12 pt</item>
+        <item>14 pt</item>
+        <item>16 pt</item>
+        <item>18 pt</item>
+        <item>20 pt</item>
+    </string-array>
+
+    <string-array name="values_font_size_prefs">
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+    </string-array>
+
+    <string-array name="entries_font_type_prefs">
+        <item>Monoespaciado</item>
+        <item>Serif</item>
+        <item>Sin Serif</item>
+    </string-array>
+</resources>

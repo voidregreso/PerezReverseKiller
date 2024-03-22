@@ -1,0 +1,329 @@
+<resources>
+    <string name="app_name">Perez Reverse Killer</string>
+    <string name="add_entry">Add files</string>
+    <string name="save_file">Save</string>
+    <string name="options">Options</string>
+    <string name="folder_name">Folder name</string>
+    <string name="add_folder">New folder</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_yes">Yes</string>
+    <string name="btn_no">No</string>
+    <string name="view">Open from system</string>
+    <string name="signed">Sign</string>
+    <string name="fmtcode">Format code</string>
+    <string name="delexif">Delete sensitive EXIF info in picture</string>
+    <string name="genjni">Generate JNI header file for the native methods</string>
+    <string name="signed_success">Signed successfully</string>
+    <string name="extract">Unzip</string>
+    <string name="extracting">Decompressing ...</string>
+    <string name="extracted">Unzipped</string>
+    <string name="extract_all">Unzip all files</string>
+    <string name="extract_zip">Unzip zip file</string>
+    <string name="extract_path_empty">The decompression path is empty.</string>
+    <string name="name_empty">The name is empty.</string>
+    <string name="file_exists">The file "\"%s\"already exists.</string>
+    <string name="extract_path">Decompression path</string>
+    <string name="rename">Rename</string>
+    <string name="cannot_rename">Unable to rename \"%s\".</string>
+    <string name="delete">Delete</string>
+    <string name="is_delete">Do you want to delete %s?</string>
+    <string name="deleted">has been deleted</string>
+    <string name="copy">Copy</string>
+    <string name="copy_to">Copy to clipboard \n</string>
+    <string name="copy_message">The file %s already exists. Do you want to overwrite it?</string>
+    <string name="copy_exception">Abnormal file copy</string>
+    <string name="copy_nothing">No file</string>
+    <string name="copy_exist">Cannot copy to current directory</string>
+    <string name="copied">Copied</string>
+    <string name="over_write">Overwrite</string>
+    <string name="cut">Cut</string>
+    <string name="cut_to">Copy to clipboard \n</string>
+    <string name="paste">Paste</string>
+    <string name="permission">Permission</string>
+    <string name="file_browser">File browsing</string>
+    <string name="directory_exists">The folder \" %s \" already exists.</string>
+    <string name="directory_created">The folder \" %s \" has been created.</string>
+    <string name="directory_cannot_create">Unable to create folder \" %s \".</string>
+    <string name="directory_empty">Folder name is empty</string>
+    <string name="exit">Exit</string>
+    <string name="wait">Please wait...</string>
+    <string name="dumpdex">Reinforced app dex unpack (BETA)</string>
+    <string name="scan_qrcode">Scan QR Code</string>
+    <string name="add_method">Add method</string>
+    <string name="add_field">Add Domain</string>
+    <string name="file_added">File added</string>
+	<string name="save_elf">Save ELF</string>
+    <string name="save_code">Save the code</string>
+    <string name="save_dexfile">Save Dex</string>
+    <string name="mass_dec_string">Batch decompile java and resource code</string>
+    <string name="save_text">Save text</string>
+    <string name="saved">Saved</string>
+    <string name="method_editor">Method description</string>
+    <string name="scan_tips">Align the QR code picture with the scan frame to automatically scan</string>
+    <string name="remove_method">How to delete</string>
+    <string name="remove_field">Delete domain</string>
+    <string name="rename_class">Rename class</string>
+    <string name="zip_editor_remove">Delete</string>
+    <string name="zip_remove_progress">Deleting...</string>
+    <string name="is_remove">Delete or not?</string>
+    <string name="merger_dexfile">Merging Dex</string>
+    <string name="remove_class">Delete class</string>
+    <string name="write_zip">Writing ...</string>
+    <string name="load_data">Loading...</string>
+    <string name="signed_zip">Signing ...</string>
+    <string name="string_pool">Character constant pool</string>
+    <string name="replace_axml">Replace characters in xml</string>
+    <string name="replace_src_view">Search for:</string>
+    <string name="replace_dst_view">Replace with:</string>
+    <string name="replace">Replace</string>
+    <string name="replace_count">Number of replacements:</string>
+    <string name="search_string">Search string</string>
+    <string name="search_field">Search domain</string>
+    <string name="search_method">Search method</string>
+    <string name="search_name">First name:</string>
+    <string name="search_descriptor">Type description:</string>
+    <string name="search">Search for</string>
+    <string name="search_class_name">Category:</string>
+    <string name="search_name_empty">The search character is empty.</string>
+    <string name="search_not_found">%s was not found.</string>
+    <string name="str_jpg2png">JPG2PNG</string>
+    <string name="str_png2jpg">PNG2JPG</string>
+
+    <string name="prefs_text">Text Editor</string>
+    <string name="preferences">Set up</string>
+    <string name="prompt">Prompt</string>
+    <string name="is_save">Do you want to save it?</string>
+    <string name="saving">Saving...</string>
+    <string name="class_exists">Class name \" %s \" already exists.</string>
+
+    <string name="line_wrap">Word wrap</string>
+    <string name="line_wrap_summary">Wrap text when the text is too long</string>
+
+    <string name="appearance">Edit interface</string>
+    <string name="font_type">Font</string>
+    <string name="font_type_summary">Choose font type</string>
+    <string name="font_size">Font size</string>
+    <string name="font_size_summary">Choose font size</string>
+    <string name="font_color">Font color</string>
+    <string name="font_color_summary">Choose font color</string>
+    <string name="bg_color">Background color</string>
+    <string name="bg_color_summary">Choose background color</string>
+
+    <string name="zip_editor">Zip editor</string>
+    <string name="text_editor">Text Editor</string>
+    <string name="class_editor">Class editor</string>
+    <string name="class_item">Class</string>
+    <string name="search_class">Search results</string>
+    <string name="field_list">Domain list</string>
+    <string name="field_item_editor">Domain editing</string>
+    <string name="field_item_new">New domain</string>
+    <string name="method_list">Method list</string>
+    <string name="code_editor">Code editing</string>
+    <string name="method_item_editor">Method editing</string>
+    <string name="method_item_new">New method</string>
+    <string name="class_info_editor">Class editor</string>
+    <string name="text_preferences">Text settings</string>
+    <string name="howto_rank">Rank by</string>
+
+    <string name="about">About</string>
+    <string name="replacing">Replacing ...</string>
+    <string name="searching">searching...</string>
+
+    <string name="from_start">From the beginning</string>
+    <string name="choose_color">choose the color</string>
+    <string name="ignore_name_descriptor">Ignore names and descriptors</string>
+    <string name="ignore_descriptor">Ignore descriptor</string>
+    <string name="extract_rar_success">Successfully decompressed RAR!</string>
+    <string name="failed_to_extract_rar">Failed to decompress RAR!</string>
+    <string name="rar_native_error">The code module responsible for decompressing RAR crashed, the new version will fix this problem!</string>
+    <string name="oat2dex_success">OAT to DEX success!</string>
+    <string name="oat2dex_fail">OAT to DEX failed!</string>
+    <string name="odex2dex_success">ODEX to DEX success!</string>
+    <string name="odex2dex_fail">ODEX to DEX failed!</string>
+    <string name="parse_elf_success">ELF file information DUMP succeeded!</string>
+    <string name="parse_elf_fail">ELF file information DUMP failed!</string>
+	<string name="videoplayer_label">Perez video player</string>
+	<string name="audioplayer_label">Perez music player</string>
+    <string name="elfeditor_label">ELF Editor</string>
+    <string name="arsceditor_label">ARSC Editor</string>
+    <string name="qrcscan_label">QRCode Scanner</string>
+	<string name="audio_play">Play</string>
+	<string name="audio_pause">Pause</string>
+	<string name="audio_stop">Stop</string>
+	<string name="dex2jar_success">DEX2JAR succeeded!</string>
+	<string name="dex2jar_fail">DEX2JAR failed!</string>
+	<string name="tips">Prompt</string>
+    <string name="axml_instruction">This is an android binary xml file, do you want to decompile or edit directly?</string>
+    <string name="xml_instruction">This is an xml plain text file, do you want to compile or edit it directly?</string>
+	<string name="dex_instruction">This is a Dex file (Android Dalvik virtual machine executable bytecode file, which is the main code segment of an APK program). Do you want to convert it to Jar, edit Dex bytecode, or disassemble?</string>
+	<string name="tojar">Convert to JAR</string>
+	<string name="editdex">Edit DEX</string>
+	<string name="disasm_dex">Disassembly DEX</string>
+	<string name="disdex_fail">Disassemble DEX failed!</string>
+	<string name="disdex_success">DEX disassembly succeeded!</string>
+	<string name="jar2dex_success">JAR2DEX succeeded!</string>
+	<string name="jar2dex_fail">JAR2DEX failed!</string>
+	<string name="jar_instruction">This is a standard Jar file (all of which are standard Java virtual machine class files in the .class format). Do you want to convert to Dex, decompile the source code, or browse the contents?</string>
+	<string name="apk_instruction">This is an apk file, do you want to browse internal files or decompile part of the java code</string>
+    <string name="open_apk">Open apk</string>
+    <string name="jadx_suc">Java code decompiled successfully</string>
+    <string name="jadx_fail">Java code decompilation failed</string>
+    <string name="todex">Convert to DEX</string>
+	<string name="explore_jar">Browse JAR</string>
+	<string name="decompile_jar">Decompile JAR source code</string>
+    <string name="decompile_javainapk">Decompile part of java code</string>
+    <string name="decompile_apk">Use apktool to decompile apk</string>
+	<string name="djar_success">Decompiled JAR successfully!</string>
+	<string name="djar_fail">Failed to decompile JAR!</string>
+	<string name="perm_read">Read</string>
+	<string name="perm_write">Write</string>
+	<string name="perm_exec">Execution</string>
+	<string name="perm_owner">Owner</string>
+	<string name="perm_group">User group</string>
+	<string name="perm_other">Other</string>
+	<string name="accessflag">Access modifier</string>
+	<string name="superclazz">Inherited parent class</string>
+	<string name="interfaze">Implemented interface class</string>
+	<string name="sourcefile">Source code file</string>
+	<string name="system_info">System information</string>
+	<string name="warning">Warning</string>
+	<string name="zipalign">ZipAlign optimization</string>
+	<string name="zip_has_aligned">This file has been optimized by ZIPAlign</string>
+	<string name="zipa_success">ZipAlign succeeded!</string>
+	<string name="zipa_fail">ZipAlign failed!</string>
+	<string name="invalid_elf">Not a valid ELF file!</string>
+	<string name="smali_instruction">This is the smali code directory obtained by Dex disassembly. Do you want to compile or browse the file directory?</string>
+	<string name="build_smali">Compile smali</string>
+	<string name="smali_to_java">Convert to java</string>
+	<string name="explore_dir">Browse the catalog</string>
+	<string name="build_smali_success">Compile smali successfully</string>
+	<string name="build_smali_fail">Failed to compile smali</string>
+	<string name="s2j_success">Smali to java success</string>
+	<string name="s2j_fail">Smali to java failed</string>
+	<string name="dex_merged">Dex merged</string>
+	<string name="save_successful">Saved successfully</string>
+	<string name="code_error">There was a problem saving the code</string>
+	<string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="error">Error</string>
+    <string name="success">Successful operation</string>
+    <string name="failure">Operation failed</string>
+    <string name="parsing">Parsing ...</string>
+    <string name="notice">Notice</string>
+    <string name="ensure_save">Are you sure you want to save</string>
+    <string name="out_of_memory">Memory overflow!</string>
+	
+    <string name="translate">Translation</string>
+    <string name="translator">Translator:</string>
+    <string name="translating">translating ...</string>
+    <string name="translate_success">Translation is successful!</string>
+    <string name="source_language">Source language:</string>
+    <string name="target_language">Target language:</string>
+    <string name="skip_already_translated">Skip translated content</string>
+    <string name="search_result">Search results:</string>
+    <string name="search_hint">Enter the content to be searched</string>
+    <string name="string_edit">String editing</string>
+    <string name="no_strings_for_editing">No strings to edit</string>
+    <string name="can_not_edit">Can\'t edit!</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_exit">Exit</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="album">Album</string>
+    <string name="qr">QRCode</string>
+    <string name="back">Back</string>
+    <string name="scan_text">Put the QR code in the box and it will scan automatically</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_UA">Browser UA Environment Change</string>
+    <string-array name="pref_item_UA">
+        <item>Phone Browser</item>
+        <item>Wechat Environment</item>
+        <item>QQ Environment</item>
+    </string-array>
+    <string-array name="pref_item_UA_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string name="pref_title_cert">Reinstall certification</string>
+    <string name="pref_description_cert">The MITM certificate must be installed to realize the HTTPS packet capture function</string>
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="httpcaptool">Network Diagnosis</string>
+    <string name="call_forwarding">Toggle Call Forwarding</string>
+
+    <string name="connecting">ToyVPN is connecting...</string>
+    <string name="connected">ToyVPN is connected!</string>
+    <string name="disconnected">ToyVPN is disconnected!</string>
+    <string name="mustinstcert">A certificate must be installed to achieve HTTPS packet capture</string>
+    <string name="sharehar">Share HAR File</string>
+    <string name="inputvc">Please input the verification code:</string>
+    <string name="toomanyreq">The total number of selected requests is too much, it is recommended to use the share function or reduce the selection.</string>
+    <string name="palette_app">Palette</string>
+    <string name="palette_fs">Failed to save the sketchpad image file!</string>
+    <string name="palette_sto">The sketchpad has been saved to:</string>
+    <string name="palette_saving">Saving your masterpiece, please wait...</string>
+    <string name="rev_sort">Reversed ranking</string>
+    <string name="scan_result_title">Scan Result</string>
+    <string name="copied_tips">Scan result has been copied to clipboard</string>
+    <string name="unsatisfied_link_err">PerezManager cannot load its dependencies so it will exit automatically.</string>
+    <string name="need_perm_tips">Permissions are required to install apps from unknown sources, please go to settings to enable permissions.</string>
+    <string name="restart_effect_tips">The function will take effect after restarting the program.</string>
+    <string name="obligatory_cert_inst">A certificate must be installed to achieve HTTPS packet capture.</string>
+
+    <string name="format_code_failed">Failed to format code!</string>
+    <string name="format_code_success">Succeeded formatting code!</string>
+    <string name="remove_exif_failed">Cannot remove EXIF from the photo!</string>
+    <string name="remove_exif_success">Succeeded deleting EXIF in the photo!</string>
+    <string name="dec_axml_failed">Failed to decompile AXML!</string>
+    <string name="dec_axml_success">Succeeded decompiling AXML!</string>
+    <string name="comp_xml_failed">Failed to compile XML to AXML!</string>
+    <string name="comp_xml_success">Succeeded compiling XML to AXML!</string>
+    <string name="btn_dec">Decompile</string>
+    <string name="btn_edit_axml">Edit AXML directly</string>
+    <string name="lack_perms">"The application won't run unless you give the following necessary permissions."</string>
+    <string name="dumpdex_title">Dex reinforcement unpacking and dumping (BETA)</string>
+    <string name="dumpdex_hint">Please input the Application entrypoint you want to unpack, e.g: com/example/hello/MainApplication</string>
+    <string name="dumpdex_err">Entrypoint cannot be null!</string>
+</resources>
